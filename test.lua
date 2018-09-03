@@ -117,3 +117,97 @@
 
 -- List.print(pHead)
 
+
+-- function C()
+--     local a = 0 
+--     return function()
+--         a = a + 1
+--         return a
+--     end 
+-- end 
+
+-- local D = C()
+
+-- function B()
+--     local count = D()
+--     print("已打印:"..count)
+-- end 
+
+-- function A()
+--     B()
+-- end
+-- A()
+-- A()
+
+
+-- module("C",package.seeall)
+-- function GetCount()
+--     local count = 0 
+--     return function()
+--         count = count + 1
+--         return count
+--     end 
+-- end
+
+-- module("B",package.seeall)
+-- require("C")
+-- local count = C.GetCount()
+-- function Print(text)
+--     local num = count()
+-- 	print(text.."已打印:"..num)
+-- end
+
+-- module("A",package.seeall)
+-- require("B")
+-- for i = 1,100 do
+-- 	B.Print(i)
+-- end
+
+
+-- local t1 = {1,2,3,4,5,6,7,8,9,3,1}
+-- local t2 = {1,2,3,5,7,10,1}
+-- function Bingji(t1,t2)
+--     local tem = {} 
+--     for k,v in ipairs(t1) do 
+--         tem[v] = true 
+--     end 
+--     for k,v in ipairs(t2) do 
+--         tem[v] = true 
+--     end 
+--     return tem 
+-- end 
+
+-- function jiaoji(t1,t2) 
+--     local tem = { }
+--     for k,v in ipairs(t1) do 
+--         for i,j in ipairs(t2) do 
+--             if j == v then 
+--                 tem[v] = true 
+--             end 
+--         end 
+--     end 
+--     return tem
+-- end 
+
+-- jj = jiaoji(t1,t2) 
+-- bj = Bingji(t1,t2) 
+-- local bjStr = "{ "
+-- local jjStr = "{ "
+-- for k,v in pairs(bj) do 
+--     bjStr = bjStr.. k.."," 
+-- end
+-- for k,v in pairs(jj) do 
+--     jjStr = jjStr.. k.."," 
+-- end
+-- print("并集为:".. bjStr.." }")
+-- print("交集为:".. jjStr.." }")
+
+local p = {[1] = 1,[2] = 2,[3] = 3,[4] = 4,[5] = 5,[7] = 7,[8] = 8,[9] = 9,[10] = 10}
+local temp  = {}
+for k,v in pairs(p) do
+    table.insert(temp,v)
+end 
+p = temp 
+for i,v in ipairs(p) do
+    print(v)
+end
